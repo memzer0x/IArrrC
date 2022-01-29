@@ -77,6 +77,7 @@ function commandHandler(from, to, message){
             return -1;
         }
         print_logs(logs_count);
+        return 0;
     }
 
     // Print Self Logs
@@ -89,6 +90,7 @@ function commandHandler(from, to, message){
             return -1;
         }
         print_slogs(logs_count, from);
+        return 0;
     }
 
     // Print other people logs
@@ -104,6 +106,7 @@ function commandHandler(from, to, message){
 
         // Extract the first parameter of the message
         print_ologs(logs_count, to);
+        return 0;
     }
 
     if(message.substring(message.search("!") + 1, message.search(" ")) == "who"){
@@ -121,6 +124,7 @@ function commandHandler(from, to, message){
             irc_connection.say(config.irc_channel, colors.bold.lime.bgblack("      operator: " + (typeof(info.operator) !== "Undefined" ? info.operator : "Undefined")));
             irc_connection.say(config.irc_channel, colors.bold.lime.bgblack("<---------------" + "-".repeat(target.length) + "--------->"))
         })
+        return 0;
     }
 
     if(message.substring(message.search("!") + 1, message.search(" ")) == "whois"){
@@ -139,9 +143,6 @@ function commandHandler(from, to, message){
             exec(message.substring(message.search("!") + 1, message.length), function(error, stdout, stderr){
                 if(error !== null){
                     irc_connection.say(config.irc_channel, colors.bold.red.bgyellow("Command \"whois\" failed. [Failed to execute command]"))
-                    if(stderr.length > 1){
-                        irc_connection.say(config.irc_channel, colors.bold.red.bgyellow(stderr))
-                    }
                     console.log(error);
                     return -1
                 } else {
@@ -177,9 +178,6 @@ function commandHandler(from, to, message){
             exec(message.substring(message.search("!") + 1, message.length), function(error, stdout, stderr){
                 if(error !== null){
                     irc_connection.say(config.irc_channel, colors.bold.red.bgyellow("Command \"nslookup\" failed. [Failed to execute command]"));
-                    if(stderr.length > 1){
-                        irc_connection.say(config.irc_channel, colors.bold.red.bgyellow(stderr));
-                    }
                     console.log(error);
                     return -1
                 } else {
@@ -190,8 +188,8 @@ function commandHandler(from, to, message){
                         }
                     })
                 }
-                return 0;
             })
+            return 0;
         }
     }
 }
@@ -221,6 +219,8 @@ function print_logs(logs_count){
     if(log_found === false){
         irc_connection.say(config.irc_channel, color.bold.red("No logs found !"))
     }
+
+    return 0;
 }
 
 function print_slogs(logs_count, from){
@@ -252,6 +252,8 @@ function print_slogs(logs_count, from){
         irc_connection.say(config.irc_channel, colors.bold.red("No logs found !"))
     }
 
+    return 0;
+
 }
 
 function print_ologs(logs_count, to){
@@ -281,6 +283,8 @@ function print_ologs(logs_count, to){
     if(log_found === false){
         irc_connection.say(config.irc_channel, colors.bold.red("No logs found for " + to))
     }
+
+    return 0;
 }
 
 var chatlogs = [];
