@@ -1,5 +1,5 @@
-# IArrrC
-IArrrC or I Arrr C (for the pirates) 🦜 is just a simple bot i've decided i was going to make for IRC to improve my javascript and node skills.
+# IArrrC 🦜
+IArrrC or I Arrr C (for the pirates) 🏴‍☠️ is just a simple bot i've decided i was going to make for IRC to improve my javascript and node skills.
 
 <p align="center">
   <img src="https://media3.giphy.com/media/3o6Zt3KyN0vd1S97d6/giphy.gif"/>
