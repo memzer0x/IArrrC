@@ -293,12 +293,12 @@ var chatlogs = [];
 welcome();
 
 // Get an IRC Connection
-var irc_connection = new irc.Client("irc.reversing-ninja.com", "IArrrC", {
-    userName: "Snooper.IRC",
-    realName: "Snoopy by K0vichski",
-    channels: ["#penisgod"],
-    autoRejoin: true,
-    autoRenick: true,
+var irc_connection = new irc.Client(config.irc_server, "IArrrC", {
+    userName: config.irc_nickname,
+    realName: config.irc_realname,
+    channels: config.irc_channel,
+    autoRejoin: config.autoRejoin,
+    autoRenick: config.autoRenick,
 });
 
 irc_connection.addListener('error', function(message) {
