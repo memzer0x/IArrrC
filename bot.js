@@ -314,7 +314,7 @@ irc_connection.addListener('message', function(from, to, message){
     if(message.startsWith("!")){
         commandHandler(from, to, message);
     }
-    if(message.startsWith("@")){
+    if(message.startsWith("$")){
         // ASCII Art Handler -> artHandler(message)
     }
 });
