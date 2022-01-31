@@ -12,4 +12,4 @@ I will spend the next few days working on different security concepts in this pr
 
 *Note that i made this warning because i don't consider myself a professional javascript programmer, i believe i'm doing great but i will always make more mistakes than someone who programmed with js for a long period, however i do intend to become better at it ;)*
 
-** Update ** Going to modify the commands system a lot so that each commands represent an object with a list of whitelisted switch (e.g -t, --type,...) and potentially blacklisted one too, this should make the program a lot more secure, i wouldn't recommand to use right now.
+** Update ** Going to modify the commands system a lot so that each commands represent an object with a list of whitelisted arguments and potentially blacklisted one too, this should make the program a lot more secure, i wouldn't recommand to use right now.
