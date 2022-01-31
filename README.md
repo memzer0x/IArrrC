@@ -11,3 +11,5 @@ Note that when i say it's not safe for use yet, it's because chat commands like 
 I will spend the next few days working on different security concepts in this project this way it can eventually safely be used in a IRC server, for now i've implemented regex patterns and a lot of check on input, but we never are too cautious.
 
 *Note that i made this warning because i don't consider myself a professional javascript programmer, i believe i'm doing great but i will always make more mistakes than someone who programmed with js for a long period, however i do intend to become better at it ;)*
+
+** Update ** Going to modify the commands system a lot so that each commands represent an object with a list of whitelisted switch (e.g -t, --type,...) and potentially blacklisted one too, this should make the program a lot more secure, i wouldn't recommand to use right now.
